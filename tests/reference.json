@@ -1,0 +1,56 @@
+{
+  "id": "E122",
+  "value": 3.2699999999999996,
+  "value_high_precision": "3.2699999999999995861054313193673075076121729935101856494582390919981496587948887",
+  "method": "Independent Python Decimal arithmetic at 80 significant digits; Taylor series for sine and arcsine, Decimal exp/sqrt, separate physical balance or geometry. No JavaScript imports.",
+  "cases": [
+    {
+      "name": "horizontal surface exact zero",
+      "values": {
+        "angle": 0
+      },
+      "expected": 0.0
+    },
+    {
+      "name": "zero rotational inertia sliding limit",
+      "values": {
+        "inertia": 0
+      },
+      "expected": 4.904999999999999
+    },
+    {
+      "name": "thin hoop rotational ratio one",
+      "values": {
+        "inertia": 0.08
+      },
+      "expected": 2.4524999999999997
+    },
+    {
+      "name": "non-special incline angle with rotational inertia",
+      "values": {
+        "mass": 3,
+        "radius": 0.2,
+        "inertia": 0.072,
+        "angle": 0.7
+      },
+      "expected": 3.949859694876093
+    },
+    {
+      "name": "underflowing intermediate ratio recovers finite acceleration",
+      "values": {
+        "mass": 1e+300,
+        "radius": 1e-300,
+        "inertia": 1e-300,
+        "gravity": 10
+      },
+      "expected": 2.4999999999999996
+    },
+    {
+      "name": "vertical plane cannot sustain the assumed contact rolling",
+      "values": {
+        "angle": 1.5707963267948966
+      },
+      "throws": true
+    }
+  ]
+}
